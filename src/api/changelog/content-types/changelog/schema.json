@@ -27,9 +27,6 @@
     "prettyDate": {
       "type": "date"
     },
-    "version": {
-      "type": "float"
-    },
     "description": {
       "type": "richtext"
     },
@@ -51,6 +48,9 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.item"
+    },
+    "version": {
+      "type": "string"
     }
   }
 }
