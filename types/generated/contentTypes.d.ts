@@ -843,9 +843,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'manyToOne',
       'api::category.category'
     >;
-    blocks: Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
     body: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -941,6 +938,46 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiChangelogChangelog extends Schema.CollectionType {
+  collectionName: 'changelogs';
+  info: {
+    singularName: 'changelog';
+    pluralName: 'changelogs';
+    displayName: 'Changelog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hasBugFix: Attribute.Boolean;
+    hasFeature: Attribute.Boolean;
+    hasEnhancement: Attribute.Boolean;
+    updateDate: Attribute.DateTime;
+    prettyDate: Attribute.Date;
+    version: Attribute.Float;
+    description: Attribute.RichText;
+    headline: Attribute.String;
+    featureImage: Attribute.Media;
+    Items: Attribute.Component<'shared.item', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::changelog.changelog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::changelog.changelog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -996,6 +1033,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::changelog.changelog': ApiChangelogChangelog;
       'api::global.global': ApiGlobalGlobal;
     }
   }
