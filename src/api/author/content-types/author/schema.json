@@ -39,6 +39,9 @@
     },
     "company": {
       "type": "string"
+    },
+    "bio": {
+      "type": "text"
     }
   }
 }

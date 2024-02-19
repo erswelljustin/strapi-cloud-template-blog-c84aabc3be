@@ -884,6 +884,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
     >;
     jobTitle: Attribute.String;
     company: Attribute.String;
+    bio: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
