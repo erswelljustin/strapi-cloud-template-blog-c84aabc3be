@@ -49,7 +49,7 @@
       "repeatable": true,
       "component": "shared.item"
     },
-    "version": {
+    "version_number": {
       "type": "string"
     }
   }

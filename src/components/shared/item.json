@@ -2,15 +2,21 @@
   "collectionName": "components_shared_items",
   "info": {
     "displayName": "Item",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "type": {
-      "type": "string"
-    },
     "text": {
       "type": "text"
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": [
+        "bug-fix",
+        "enhancement",
+        "feature"
+      ]
     }
   }
 }

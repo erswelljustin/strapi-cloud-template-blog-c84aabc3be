@@ -5,10 +5,11 @@ export interface SharedItem extends Schema.Component {
   info: {
     displayName: 'Item';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
-    type: Attribute.String;
     text: Attribute.Text;
+    kind: Attribute.Enumeration<['bug-fix', 'enhancement', 'feature']>;
   };
 }
 
