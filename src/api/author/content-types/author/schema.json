@@ -42,6 +42,9 @@
     },
     "bio": {
       "type": "text"
+    },
+    "linkedin": {
+      "type": "string"
     }
   }
 }
